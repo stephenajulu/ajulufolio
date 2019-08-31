@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Massive Collection #1 Breach Exposes 777 Million Emails, 22 Million Passwords</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Massive Collection #1 Breach Exposes 777 Million Emails, 22 Million Passwords</h1>
+      <h2 id="blog_sub_title">Massive Collection #1 Breach Exposes 777 Million Emails, 22 Million Passwords</h2>
+      <div id="blog"><p id="para_0_original">Hey guys, how are y'all doing? Another massive data dump has just occurred. And as the title says it's big and serious. I'll post links to help you check out if your passwords or emails are part of the dump. My advice, whether or not you find your data, go change your password to a strong 20 character password, you can check out my password post for more info: <a href="https://www.ajulusthoughts.wordpress.com/the-key-to-uncrackable-passwords-the-best-password/" target="_blank" rel="noopener noreferrer">The Key to "Uncrackable" Passwords: The Best Password Guide</a>.
+<br>
+Post from <a href="https://techweez.com/" target="_blank" rel="noopener noreferrer">Techweez</a>: We generally need two variables to get an account online: Your email address and a password. These are used to identify you and they are usually stored securely on servers and we are only left to trust that these companies keep these crucial information safe from harmful third parties.
+<br>
+However, this never goes according to plan. We have seen countless stories of massive data breaches which leak email addresses and passwords to the dark web. Such info is either used to login to accounts or sold off to unscrupulous individuals in the dark web.
+<br>
+This latest breach compounds to the numerous breaches that are unfortunately revealed long after they happened. Troy Hunt, founder of Have I Been Pwned wrote a post detailing a huge breach that was directed to him by a number of people.
+<br>
+He calls this breach Collection #1 and the statistics around it are insane. It is 87GB in size, has 772,904,991 unique email addresses, 21,222,975 unique passwords and 1,160,253,228 unique combinations of email addresses and passwords.
+<br>
+Hunt says that he found his own personal data in the data dump, an email address and a password he used many years ago. “If you’re in this breach, one of more passwords you’ve previously used are floating for others to see,” he continues.
+<br>
+The 21 million passwords from Collection #1 have been added to the Pwned Passwords database, which has brought the total number of unique passwords to over 551 million. You can check whether your email address has been leaked by clicking <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer">here</a> and if you want to check whether your passwords have been leaked, click <a href="https://haveibeenpwned.com/Passwords" target="_blank" rel="noopener noreferrer">here</a>.
+<br>
+They give you a good idea of what email addresses or passwords you should stop using and either use new ones or use a password manager. It is quite sad that people still use dumb passwords even today and that has to change in 2018.</p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://stephenajulu.com" target="_blank">authored &amp; made by stephen ajulu</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
