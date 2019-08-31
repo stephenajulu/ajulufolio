@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bitcoin hits an all time high of ksh.934500</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Bitcoin hits an all time high of ksh.934500</h1>
+      <h2 id="blog_sub_title">Bitcoin hits an all time high of ksh.934500</h2>
+      <div id="blog"><p id="para_0_original"><!-- wp:paragraph -->
+</p><p>Bitcoin (BTC), the most popular digital asset in the market, for the first time in 2019 reached a new high of above ksh.934,500 ($8900) on Sunday before retracting slightly, according to CoinDesk’s price data. The last time Bitcoin peaked that high was in May 2018.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>“Goodbye meme triangle, hello $10k+ targets. Some people were  screaming triple top when the more obvious conclusion is retest after  retest of resistance will finally lead to a break to the upside. Bitcoin  could cool off, run sideways but IMO will continue to move up over $10k,” said Crypto trader Josh Rager who is expecting more gains with BTC  pushing past $10k.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>At the time of writing, Bitcoin was trading at ksh.917,412.3 ($8,737.26). Meanwhile,  other highly ranked cryptocurrencies like Ethereum (ETH), Litecoin (LTC), XRP and Bitcoin Cash were trading at ksh.26,767 ($267.67), ksh. 11,952.15 ($113.83), ksh. 44.247 ($0.4214)  and ksh.45,450.3 ($432.86) respectively.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1646} -->
+<figure class="wp-block-image"><img src="https://ajulusthoughts.files.wordpress.com/2019/05/proxy.duckduckgodvdw.com_.jpeg" alt="" class="wp-image-1646"><figcaption>Berlin, Germany - April 10: In this photo illustration coins of the crypto currencies bitcoin, ethereum litecoin and ripple stands on a hard disk on April 10, 2018 in Berlin, Germany. (Photo Illustration by Thomas Trutschel/Photothek via Getty Images)</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>If the value of Bitcoin continues to see an upward trend in the coming days, it could very soon breach the ksh. 1,000,000 ($10,000) mark.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":5} -->
+<h5><strong>Source: </strong><a href="https://www.coindesk.com/bitcoin-hits-new-2019-high-above-8900?fbclid=IwAR3QcsEmRAIAbeSSbEIVM5zPEAR68T0MPjc7_LYAF6gbOIYSBn6Hi7bZsAk"><strong>CoinDesk</strong></a></h5>
+<!-- /wp:heading --><p></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

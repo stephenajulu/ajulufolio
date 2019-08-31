@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Beginner's Guide to Virtualization</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.png) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">The Beginner's Guide to Virtualization</h1>
+      <h2 id="blog_sub_title">The Beginner's Guide to Virtualization</h2>
+      <div id="blog"><p id="para_0_original"><!-- wp:paragraph -->
+</p><p>Hey guys, how are y'all doing? It's a good day isn't it? Today we will touch on virtualization and Virtual machines. Have you ever wanted to shift from Windows to Linux but you were afraid of not liking it? Are an aspiring white hat(ethical hacker) looking for a way to test your skills? Or do you want to to start pentesting using kali linux but don't want to dual boot or replace your current operating system? Are you paranoid about your security and want to build containers of your personality to prevent being tracked or hacked? This is where virtualization comes in. To borrow from Wikipedia the definition of Virtualization.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Virtualization: In computing, virtualization refers to the act of creating a virtual (rather than actual) version of something, including virtual computer hardware platforms, storage devices, and computer network resources.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now to start, i suggest you either download Qubes OS or Vmware Workstation/Player or Oracle's VirtualBox.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I will teach you how to install Elementary OS, the process can be implemented to other distributions of Linux and Windows.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The process is pretty much the same in both Vmware and Virtualbox</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To start off, download Vmware Workstation here: <a rel="noopener" target="_blank" href="http://store.vmware.com/upgradeworkstation">Vmware Workstation</a> and <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Install them<br>NB: Vmware Workstation is not free neither open source, but it does give free trials.  Virtualbox however is a open source and free (FOSS)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=cgmMJd06g-8","type":"rich","providerNameSlug":"","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed-youtube wp-block-embed is-type-rich wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=cgmMJd06g-8
+</div></figure>
+<!-- /wp:core-embed/youtube -->
+
+<!-- wp:paragraph -->
+<p>That's it for today guys. This is my first video, so comment down below, how it was and where you think i should improve. I will add a music to it soon. I am still a beginner at Video recording and editing so "niwieradhi" Hope i said that right. Have a fantastic day.</p>
+<!-- /wp:paragraph --><p></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
