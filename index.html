@@ -9,9 +9,33 @@
     <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel='manifest' href='/manifest.json'>
-  <link rel="icon" href="https://avatars3.githubusercontent.com/u/53620151?s=200&v=4" type="image/png"></head>
+  <link rel="icon" href="https://avatars3.githubusercontent.com/u/53620151?s=200&v=4" type="image/png">
+    </head>
 
   <body>
+      
+      <script>
+          // This is the "Offline copy of pages" service worker
+
+// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+// Check compatibility for the browser we're running this in
+if ("serviceWorker" in navigator) {
+  if (navigator.serviceWorker.controller) {
+    console.log("[PWA Builder] active service worker found, no need to register");
+  } else {
+    // Register the service worker
+    navigator.serviceWorker
+      .register("pwabuilder-sw.js", {
+        scope: "./"
+      })
+      .then(function (reg) {
+        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+      });
+  }
+}
+      </script>
+      
     <div id="loading">
       <div id="spinner"></div>
     </div>
@@ -34,88 +58,6 @@
                 </div>
     </div>
     <div id="display">
-      <!--<div id="work">
-        <h1>Work.</h1>
-        <div class="projects" id="work_section">
-                        <a href="https://github.com/stephen-ajulu-shop/stephen-ajulu-shop.github.io" target="_blank">
-                        <section>
-                            <div class="section_title">stephen-ajulu-shop.github.io</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; JavaScript</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/stephenajulu/delete-web-service-accounts" target="_blank">
-                        <section>
-                            <div class="section_title">delete-web-service-accounts</div>
-                            <div class="about_section">
-                            <span style="display:block;">A list of direct links to delete your account from web services</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/stephenajulu/eleventy-base-blog" target="_blank">
-                        <section>
-                            <div class="section_title">eleventy-base-blog</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/stephenajulu/mr-ajuludotgithubdotio" target="_blank">
-                        <section>
-                            <div class="section_title">mr-ajuludotgithubdotio</div>
-                            <div class="about_section">
-                            <span style="display:block;">Personal Website | Portfolio | Personal Brand | Resume | CV | Blog | Personal</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/stephenajulu/operation-privacy-anonymity-security" target="_blank">
-                        <section>
-                            <div class="section_title">operation-privacy-anonymity-security</div>
-                            <div class="about_section">
-                            <span style="display:block;">A list of resources for the security conscious tech-users. Operation privacy, anonymity, security, incident response, help guides and links</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/stephenajulu/v1" target="_blank">
-                        <section>
-                            <div class="section_title">v1</div>
-                            <div class="about_section">
-                            <span style="display:none;">undefined</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 1</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a></div>
-      </div>-->
       <div id="forks" style="display:none;">
         <h1>Forks.</h1>
         <div class="projects" id="forks_section"></div>
@@ -190,29 +132,5 @@
         magicForksGrid.listen();
       });
       </script>
-      
-      <script>
-        
-        // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
-
-// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-// Check compatibility for the browser we're running this in
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("pwabuilder-sw.js", {
-        scope: "./"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
-}
-
-    </script>
   
 </body></html>
