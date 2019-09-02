@@ -35,6 +35,36 @@ if ("serviceWorker" in navigator) {
   }
 }
       </script>
+      <script>
+   let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+});
+
+async function install() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    console.log(deferredPrompt)
+    deferredPrompt.userChoice.then(function(choiceResult){
+
+      if (choiceResult.outcome === 'accepted') {
+      console.log('Your PWA has been installed');
+    } else {
+      console.log('User chose to not install your PWA');
+    }
+
+    deferredPrompt = null;
+
+    });
+
+
+  }
+}
+      </script>
       
     <div id="loading">
       <div id="spinner"></div>
@@ -54,7 +84,8 @@ if ("serviceWorker" in navigator) {
                 <span style="display:block;"><a href="https://www.dribbble.com/stephenajulu" target="_blank" class="socials"><i class="fab fa-dribbble"></i></a></span>
                 <span style="display:block;"><a href="https://www.linkedin.com/in/stephenajulu/" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
                 <span style="display:block;"><a href="https://www.medium.com/@stephenajulu/" target="_blank" class="socials"><i class="fab fa-medium-m"></i></a></span>
-              </div>
+              <button onclick="install()">Install</button>
+          </div>
                 </div>
     </div>
     <div id="display">
